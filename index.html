@@ -1,27 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
- <head>
+<head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Birthday Gift for Salma Salsabil 🎂</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="/_sdk/element_sdk.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;family=Dancing+Script:wght@700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
   <style>
-    
     * {
       box-sizing: border-box;
-      font-family: "Segoe UI", sans-serif;
-    }
-    
-    body {
-       height: 100%;
-       margin: 0;
-      overflow: hidden;
-    }
-    
-    * {
       font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: fixed;
     }
     
     .script-font {
@@ -52,39 +49,57 @@
       50% { background-position: 100% 50%; }
     }
     
-    /* Passcode section */
+    /* Passcode section - Landscape optimized */
     .passcode-container {
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 240, 245, 0.95) 100%);
       border-radius: 20px;
-      padding: 20px 16px 40px;
+      padding: 15px 20px 20px;
       box-shadow: 0 20px 60px rgba(255, 107, 149, 0.2);
-      max-width: 420px;
-      max-height: 200vh;
-      width: 100%;
+      max-width: 600px;
+      width: 90%;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     @media (max-width: 640px) {
       .passcode-container {
-        padding: 24px 16px;
+        padding: 12px 16px 16px;
         border-radius: 16px;
+        max-width: 500px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .passcode-container {
+        padding: 10px 12px 14px;
+        max-width: 420px;
       }
     }
     
     .clue-text {
       text-align: center;
-      font-size: 18px;
+      font-size: 14px;
       color: #666;
-      margin-top: 50px;
+      margin-top: 0;
+      margin-bottom: 10px;
       font-weight: 500;
-      line-height: 1.6;
+      line-height: 1.3;
       animation: fadeInDown 0.8s ease;
     }
 
     @media (max-width: 640px) {
       .clue-text {
-        font-size: 16px;
-        margin-bottom: 20px;
+        font-size: 13px;
+        margin-bottom: 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .clue-text {
+        font-size: 12px;
+        margin-bottom: 6px;
       }
     }
     
@@ -93,28 +108,76 @@
       font-weight: 700;
       font-style: italic;
     }
+
+    .bear-image-container {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .bear-image-container img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 20%;
+      box-shadow: 0 8px 20px rgba(255, 107, 149, 0.3);
+    }
+
+    @media (max-width: 640px) {
+      .bear-image-container img {
+        width: 70px;
+        height: 70px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .bear-image-container img {
+        width: 60px;
+        height: 60px;
+      }
+    }
     
     .passcode-title {
       text-align: center;
-      font-size: 24px;
+      font-size: 18px;
       font-weight: 700;
       color: #ff6b95;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       animation: fadeInDown 0.8s ease 0.1s both;
+    }
+
+    @media (max-width: 640px) {
+      .passcode-title {
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .passcode-title {
+        font-size: 15px;
+        margin-bottom: 6px;
+      }
     }
     
     .passcode-input-group {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       justify-content: center;
-      margin-bottom: 20px;
+      margin-bottom: 12px;
       animation: fadeInUp 0.8s ease 0.2s both;
+    }
+
+    @media (max-width: 480px) {
+      .passcode-input-group {
+        gap: 6px;
+        margin-bottom: 10px;
+      }
     }
     
     .passcode-digit {
-      width: 60px;
-      height: 60px;
-      font-size: 28px;
+      width: 45px;
+      height: 45px;
+      font-size: 22px;
       font-weight: 700;
       text-align: center;
       border: 3px solid #ffb6c1;
@@ -122,6 +185,23 @@
       background: white;
       transition: all 0.3s ease;
       color: #ff6b95;
+    }
+
+    @media (max-width: 640px) {
+      .passcode-digit {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .passcode-digit {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+        border: 2px solid #ffb6c1;
+      }
     }
     
     .passcode-digit:focus {
@@ -141,10 +221,18 @@
       text-align: center;
       color: #ff6b95;
       font-weight: 600;
-      margin-top: 15px;
+      margin-top: 8px;
       animation: shake 0.5s ease;
       opacity: 0;
-      min-height: 20px;
+      min-height: 16px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 480px) {
+      .error-message {
+        font-size: 12px;
+        min-height: 14px;
+      }
     }
     
     .error-message.show {
@@ -155,30 +243,6 @@
       0%, 100% { transform: translateX(0); }
       25% { transform: translateX(-10px); }
       75% { transform: translateX(10px); }
-    }
-    
-    .submit-btn {
-      width: 100%;
-      padding: 14px 24px;
-      background: linear-gradient(135deg, #ff6b95 0%, #ff8fab 100%);
-      color: white;
-      border: none;
-      border-radius: 12px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 16px;
-      box-shadow: 0 8px 25px rgba(255, 107, 149, 0.4);
-      animation: fadeInUp 0.8s ease 0.3s both;
-    }
-    
-    .submit-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 35px rgba(255, 107, 149, 0.5);
-    }
-    
-    .submit-btn:active {
-      transform: translateY(-1px);
     }
     
     /* Envelope styles */
@@ -335,23 +399,31 @@
     }
     
     /* Section transitions */
-   .section {
-  position: relative;
-  height: 100vh;               /* ⬅️ BUKAN min-height */
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    .section {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(0.95);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 20px 16px;
+      box-sizing: border-box;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
 
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(0.95);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-
-  padding: 24px 16px;          /* padding kecil */
-  box-sizing: border-box;      /* ⬅️ WAJIB */
-}
+    @media (max-width: 480px) {
+      .section {
+        padding: 16px 12px;
+      }
+    }
     
     .section.active {
       opacity: 1;
@@ -359,7 +431,7 @@
       transform: scale(1);
     }
     
-    /* Photo frame styles */
+    /* Photo frame styles - ONE PHOTO PER FRAME */
     .photo-frame {
       position: relative;
       background: white;
@@ -382,6 +454,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
     }
 
     @media (max-width: 640px) {
@@ -398,33 +471,43 @@
       }
     }
     
-    /* Photo slider */
+    /* Photo slider - FIXED: One photo per view */
     .photo-slider {
       display: flex;
       transition: transform 0.6s ease;
+      width: 100%;
+      height: 100%;
     }
     
     .photo-slide {
-      min-width: 100%;
+      min-width: 280px;
+      width: 280px;
+      height: 280px;
+      flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 100px;
+    }
+
+    .photo-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     @media (max-width: 640px) {
       .photo-slide {
         min-width: 240px;
+        width: 240px;
         height: 240px;
-        font-size: 80px;
       }
     }
 
     @media (max-width: 480px) {
       .photo-slide {
         min-width: 200px;
+        width: 200px;
         height: 200px;
-        font-size: 60px;
       }
     }
     
@@ -433,6 +516,9 @@
       display: flex;
       gap: 8px;
       margin-top: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 300px;
     }
     
     .nav-dot {
@@ -486,28 +572,6 @@
       opacity: 1;
     }
     
-    /* Sparkle effect */
-    .sparkle {
-      position: absolute;
-      pointer-events: none;
-      animation: sparkle 0.8s ease-out forwards;
-    }
-    
-    @keyframes sparkle {
-      0% {
-        opacity: 1;
-        transform: scale(0) rotate(0deg);
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1) rotate(180deg);
-      }
-      100% {
-        opacity: 0;
-        transform: scale(0) rotate(360deg);
-      }
-    }
-    
     /* Cake animation */
     .cake-icon {
       animation: cakeBounce 2s ease-in-out infinite;
@@ -522,6 +586,7 @@
     .star-deco {
       position: absolute;
       animation: twinkle 2s ease-in-out infinite;
+      z-index: 1;
     }
     
     @keyframes twinkle {
@@ -558,7 +623,7 @@
     }
     
     .menu-card {
-      background: white;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 240, 245, 0.95) 100%);
       padding: 30px 20px;
       border-radius: 16px;
       border: 2px solid transparent;
@@ -569,7 +634,6 @@
       flex-direction: column;
       align-items: center;
       gap: 12px;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 240, 245, 0.95) 100%);
     }
     
     .menu-card:hover {
@@ -613,28 +677,30 @@
       margin: 0;
     }
     
-    /* Final message section */
+    /* Final message section - Landscape optimized */
     .final-message {
       text-align: center;
-      max-width: 400px;
+      max-width: 900px;
+      width: 100%;
     }
     
     .wish-card {
       background: rgba(255, 255, 255, 0.95);
-      padding: 32px;
+      padding: 90px 28px 28px;
       border-radius: 20px;
       box-shadow: 0 20px 60px rgba(255, 182, 193, 0.3);
       position: relative;
-      overflow: hidden;
+      overflow: visible;
       margin: 0 15px;
-      max-width: 500px;
+      max-width: 800px;
       margin-left: auto;
       margin-right: auto;
+      min-height: auto;
     }
 
     @media (max-width: 640px) {
       .wish-card {
-        padding: 24px;
+        padding: 20px 24px;
         margin: 0 12px;
         border-radius: 16px;
       }
@@ -642,7 +708,7 @@
 
     @media (max-width: 480px) {
       .wish-card {
-        padding: 20px;
+        padding: 16px 20px;
         margin: 0 10px;
         border-radius: 12px;
       }
@@ -666,24 +732,68 @@
     
     .birthday-section {
       background: linear-gradient(135deg, rgba(255, 182, 193, 0.1) 0%, rgba(255, 240, 245, 0.1) 100%);
-      padding: 28px;
+      padding: 20px;
       border-radius: 16px;
-      margin-top: 24px;
+      margin-top: 20px;
       border-left: 4px solid #ff6b95;
+      text-align: left;
+    }
+
+    @media (max-width: 640px) {
+      .birthday-section {
+        padding: 16px;
+        margin-top: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .birthday-section {
+        padding: 14px;
+        margin-top: 14px;
+      }
     }
     
     .birthday-title {
       color: #ff6b95;
       font-weight: 700;
-      font-size: 16px;
-      margin-bottom: 12px;
+      font-size: 15px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .birthday-title {
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .birthday-title {
+        font-size: 13px;
+      }
     }
     
     .birthday-text {
       color: #666;
-      font-size: 15px;
-      line-height: 1.8;
+      font-size: 14px;
+      line-height: 1.7;
       font-style: italic;
+      text-align: left;
+    }
+
+    @media (max-width: 640px) {
+      .birthday-text {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .birthday-text {
+        font-size: 12px;
+        line-height: 1.5;
+      }
     }
     
     /* Music section */
@@ -848,16 +958,32 @@
       50% { opacity: 1; }
     }
 
-    /* Number pad styles */
+    /* Number pad styles - Landscape optimized */
     .number-pad {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 24px;
+      gap: 8px;
+      margin-top: 12px;
       width: 100%;
-      max-width: 300px;
+      max-width: 220px;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    @media (max-width: 640px) {
+      .number-pad {
+        gap: 6px;
+        max-width: 200px;
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .number-pad {
+        gap: 5px;
+        max-width: 180px;
+        margin-top: 8px;
+      }
     }
 
     .num-btn {
@@ -865,8 +991,8 @@
       aspect-ratio: 1;
       background: white;
       border: 2px solid #ffb6c1;
-      border-radius: 14px;
-      font-size: 20px;
+      border-radius: 12px;
+      font-size: 18px;
       font-weight: 700;
       color: #ff6b95;
       cursor: pointer;
@@ -874,6 +1000,20 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    @media (max-width: 640px) {
+      .num-btn {
+        font-size: 16px;
+        border-radius: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .num-btn {
+        font-size: 15px;
+        border-radius: 8px;
+      }
     }
 
     .num-btn:hover {
@@ -891,7 +1031,13 @@
       background: linear-gradient(135deg, #ff6b95 0%, #ff8fab 100%);
       color: white;
       border-color: #ff6b95;
-      font-size: 18px;
+      font-size: 16px;
+    }
+
+    @media (max-width: 480px) {
+      .num-btn.delete {
+        font-size: 14px;
+      }
     }
 
     .num-btn.delete:hover {
@@ -1093,829 +1239,686 @@
       }
     }
   </style>
-  <style>@view-transition { navigation: auto; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
- </head>
- <body class="overflow-auto">
-  <div id="app" class="pastel-bg min-h-screen w-full relative overflow-y-auto">
-<!-- Decorative stars -->
-   <div class="star-deco text-2xl" style="top: 10%; left: 10%; animation-delay: 0s;">
-    ✨
-   </div>
-   <div class="star-deco text-xl" style="top: 20%; right: 15%; animation-delay: 0.5s;">
-    ⭐
-   </div>
-   <div class="star-deco text-2xl" style="bottom: 20%; left: 8%; animation-delay: 1s;">
-    💫
-   </div>
-   <div class="star-deco text-xl" style="bottom: 15%; right: 10%; animation-delay: 1.5s;">
-    ✨
-   </div>
-   <!-- Section 0: Passcode -->
-   <div id="section-passcode" class="section active">
-    <div class="passcode-container">
-     <div class="clue-text">
-      🔐 <span class="clue-highlight">Clue: Kamu + Aku / Taun Kita Pertama Kenal</span>
-     </div>
-     <div style="text-align: center; margin-bottom: 24px;"><img src="https://media.giphy.com/media/zVoPCF6nmexorzCpW3/giphy.gif" alt="cute bear" loading="lazy" onerror="console.error('Bear GIF failed to load:', this.src); this.style.background='#ffb6c1'; this.style.borderRadius='50%';" style="width: 140px; height: 140px; object-fit: cover; border-radius: 20%; box-shadow: 0 8px 20px rgba(255, 107, 149, 0.3);">
-     </div>
-     <div class="passcode-title">
-      Kamu harusnya tau PIN nya 💕
-     </div>
-     <div class="passcode-input-group"><input type="text" maxlength="1" class="passcode-digit" data-index="0" inputmode="numeric" readonly> <input type="text" maxlength="1" class="passcode-digit" data-index="1" inputmode="numeric" readonly> <input type="text" maxlength="1" class="passcode-digit" data-index="2" inputmode="numeric" readonly> <input type="text" maxlength="1" class="passcode-digit" data-index="3" inputmode="numeric" readonly>
-     </div>
-     <div class="number-pad"><button class="num-btn" data-num="1">1</button> <button class="num-btn" data-num="2">2</button> <button class="num-btn" data-num="3">3</button> <button class="num-btn" data-num="4">4</button> <button class="num-btn" data-num="5">5</button> <button class="num-btn" data-num="6">6</button> <button class="num-btn" data-num="7">7</button> <button class="num-btn" data-num="8">8</button> <button class="num-btn" data-num="9">9</button> <button class="num-btn delete" id="delete-btn">🔙</button> <button class="num-btn" data-num="0">0</button> <button class="num-btn" id="submit-pin-btn" style="background: linear-gradient(135deg, #ff6b95 0%, #ff8fab 100%); color: white; border-color: #ff6b95;">✓</button>
-     </div>
-     <div class="error-message" id="error-message"></div>
-    </div>
-   </div>
-   <!-- Section 1: Envelope -->
-   
-   <div id="section-envelope" class="section">
-    <div class="text-center mb-8 slide-in">
-     <p class="text-gray-500 text-lg mb-2">🎁 Ada surat untuk ayang aku yang baik hati dan tidak sombong!</p>
-     <h2 id="envelope-recipient" class="script-font text-3xl text-pink-400">Untuk Salma Salsabil atau AMA</h2>
-    </div>
-    <div class="envelope-container">
-     <div id="envelope" class="envelope">
-      <div class="envelope-body"></div>
-      <div class="envelope-flap"></div>
-      <div class="heart-seal">
-       <svg viewbox="0 0 24 24" fill="#ff4d6d"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-       </svg>
+</head>
+<body>
+  <div id="app" class="pastel-bg" style="width: 100%; height: 100%; position: fixed; overflow: hidden;">
+    <!-- Decorative stars -->
+    <div class="star-deco text-2xl" style="top: 10%; left: 10%; animation-delay: 0s;">✨</div>
+    <div class="star-deco text-xl" style="top: 20%; right: 15%; animation-delay: 0.5s;">⭐</div>
+    <div class="star-deco text-2xl" style="bottom: 20%; left: 8%; animation-delay: 1s;">💫</div>
+    <div class="star-deco text-xl" style="bottom: 15%; right: 10%; animation-delay: 1.5s;">✨</div>
+
+    <!--Section 0: Passcode -->
+    <div id="section-passcode" class="section active">
+      <div class="passcode-container">
+        <div class="clue-text">
+          🔐 <span class="clue-highlight">Clue: Kamu + Aku / Taun Kita Pertama Kenal</span>
+        </div>
+        <div class="bear-image-container">
+          <img src="https://media.giphy.com/media/zVoPCF6nmexorzCpW3/giphy.gif" alt="cute bear" loading="lazy" 
+               onerror="console.error('Bear GIF failed to load:', this.src); this.style.background='#ffb6c1'; this.style.borderRadius='50%';">
+        </div>
+        <div class="passcode-title">Kamu harusnya tau PIN nya 💕</div>
+        <div class="passcode-input-group">
+          <input type="text" maxlength="1" class="passcode-digit" data-index="0" inputmode="numeric" readonly>
+          <input type="text" maxlength="1" class="passcode-digit" data-index="1" inputmode="numeric" readonly>
+          <input type="text" maxlength="1" class="passcode-digit" data-index="2" inputmode="numeric" readonly>
+          <input type="text" maxlength="1" class="passcode-digit" data-index="3" inputmode="numeric" readonly>
+        </div>
+        <div class="number-pad">
+          <button class="num-btn" data-num="1">1</button>
+          <button class="num-btn" data-num="2">2</button>
+          <button class="num-btn" data-num="3">3</button>
+          <button class="num-btn" data-num="4">4</button>
+          <button class="num-btn" data-num="5">5</button>
+          <button class="num-btn" data-num="6">6</button>
+          <button class="num-btn" data-num="7">7</button>
+          <button class="num-btn" data-num="8">8</button>
+          <button class="num-btn" data-num="9">9</button>
+          <button class="num-btn delete" id="delete-btn">🔙</button>
+          <button class="num-btn" data-num="0">0</button>
+          <button class="num-btn" id="submit-pin-btn" style="background: linear-gradient(135deg, #ff6b95 0%, #ff8fab 100%); color: white; border-color: #ff6b95;">✓</button>
+        </div>
+        <div class="error-message" id="error-message"></div>
       </div>
-      <div class="envelope-inner"><span class="text-pink-400 text-4xl">💌</span>
+    </div>
+
+    <!-- Section 1: Envelope -->
+    <div id="section-envelope" class="section">
+      <div class="text-center mb-8 slide-in">
+        <p class="text-gray-500 text-lg mb-2">🎁 Ada surat untuk ayang aku yang baik hati dan tidak sombong!</p>
+        <h2 id="envelope-recipient" class="script-font text-3xl text-pink-400">Untuk Salma Salsabil atau AMA</h2>
       </div>
-     </div>
+      <div class="envelope-container">
+        <div id="envelope" class="envelope">
+          <div class="envelope-body"></div>
+          <div class="envelope-flap"></div>
+          <div class="heart-seal">
+            <svg viewBox="0 0 24 24" fill="#ff4d6d">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+          </div>
+          <div class="envelope-inner">
+            <span class="text-pink-400 text-4xl">💌</span>
+          </div>
+        </div>
+      </div>
+      <p class="instruction mt-8">👆 Klik amplop untuk membuka</p>
     </div>
-    <p class="instruction mt-8">👆 Klik amplop untuk membuka</p>
-   </div><!-- Section 1.5: Menu Selection -->
-   <div id="section-menu" class="section">
-    <div class="text-center mb-12 slide-in">
-     <h2 class="script-font text-4xl text-pink-500 mb-2">Pilih yang mau dilihat 💝</h2>
-     <p class="text-gray-500">Hadiah spesial dari aku untuk ama hehe</p>
+
+    <!--Section 1.5: Menu Selection -->
+    <div id="section-menu" class="section">
+      <div class="text-center mb-12 slide-in">
+        <h2 class="script-font text-4xl text-pink-500 mb-2">Pilih yang mau dilihat 💝</h2>
+        <p class="text-gray-500">Hadiah spesial dari aku untuk ama hehe</p>
+      </div>
+      <div class="menu-grid">
+        <button id="menu-photo" class="menu-card">
+          <div class="menu-icon">📸</div>
+          <h3 class="menu-title">Photo Gallery</h3>
+          <p class="menu-desc">Lihat momen indah</p>
+        </button>
+        <button id="menu-message" class="menu-card">
+          <div class="menu-icon">💌</div>
+          <h3 class="menu-title">Message</h3>
+          <p class="menu-desc">Ucapan spesial</p>
+        </button>
+        <button id="menu-music" class="menu-card">
+          <div class="menu-icon">🎵</div>
+          <h3 class="menu-title">Music</h3>
+          <p class="menu-desc">Putar lagu favorit</p>
+        </button>
+      </div>
     </div>
-    <div class="menu-grid"><button id="menu-photo" class="menu-card">
-      <div class="menu-icon">
-       📸
-      </div><h3 class="menu-title">Photo Gallery</h3><p class="menu-desc">Lihat momen indah</p></button> <button id="menu-message" class="menu-card">
-      <div class="menu-icon">
-       💌
-      </div><h3 class="menu-title">Message</h3><p class="menu-desc">Ucapan spesial</p></button> <button id="menu-music" class="menu-card">
-      <div class="menu-icon">
-       🎵
-      </div><h3 class="menu-title">Music</h3><p class="menu-desc">Putar lagu favorit</p></button>
+
+    <!-- Section 2: Photo Gallery -->
+    <div id="section-photos" class="section">
+      <div class="text-center mb-6 slide-in">
+        <h2 class="script-font text-4xl text-pink-500 mb-2" id="gallery-title">Momen ✨</h2>
+        <p class="text-gray-500">Geser untuk lihat kenangan, moga nanti bisa ketemu yaa, biar ada momen real life nyaa🥲</p>
+      </div>
+      <div class="photo-frame">
+        <div class="photo-inner">
+          <div id="photo-slider" class="photo-slider">
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-purple-100">
+              <img src="3.jpeg" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-blue-100 to-pink-100">
+              <img src="4.jpeg" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-purple-100 to-pink-100">
+              <img src="2.jpeg" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+              <img src="ama3.jpeg" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+              <img src="ama4.jpeg" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+              <img src="ama1.jpeg" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+              <img src="ama6.jpeg" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+              <img src="ama5.jpeg" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+              <img src="ama2.jpeg" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+              <img src="19.jpg" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+              <img src="18.jpg" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+              <img src="6.jpg" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+              <img src="r3.jpeg" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+              <img src="r1.jpeg" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+              <img src="r2.jpeg" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+              <img src="r4.jpeg" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-blue-100 to-orange-100">
+              <img src="11.png" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100">
+              <img src="13.png" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100">
+              <img src="12.png" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100">
+              <img src="14.png" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100">
+              <img src="15.png" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100">
+              <img src="16.png" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100">
+              <img src="5.png" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100">
+              <img src="7.png" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100">
+              <img src="8.png" alt="">
+            </div>
+            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100">
+              <img src="9.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="absolute -bottom-3 -right-3 text-2xl">📸</div>
+      </div>
+      <div class="flex items-center gap-4 mt-6">
+        <button id="prev-btn" class="arrow-btn" disabled>←</button>
+        <div id="nav-dots" class="nav-dots">
+          <div class="nav-dot active" data-index="0"></div>
+          <div class="nav-dot" data-index="1"></div>
+          <div class="nav-dot" data-index="2"></div>
+          <div class="nav-dot" data-index="3"></div>
+          <div class="nav-dot" data-index="4"></div>
+          <div class="nav-dot" data-index="5"></div>
+          <div class="nav-dot" data-index="6"></div>
+          <div class="nav-dot" data-index="7"></div>
+          <div class="nav-dot" data-index="8"></div>
+          <div class="nav-dot" data-index="9"></div>
+          <div class="nav-dot" data-index="10"></div>
+          <div class="nav-dot" data-index="11"></div>
+          <div class="nav-dot" data-index="12"></div>
+          <div class="nav-dot" data-index="13"></div>
+          <div class="nav-dot" data-index="14"></div>
+          <div class="nav-dot" data-index="15"></div>
+          <div class="nav-dot" data-index="16"></div>
+          <div class="nav-dot" data-index="17"></div>
+          <div class="nav-dot" data-index="18"></div>
+          <div class="nav-dot" data-index="19"></div>
+          <div class="nav-dot" data-index="20"></div>
+          <div class="nav-dot" data-index="21"></div>
+          <div class="nav-dot" data-index="22"></div>
+          <div class="nav-dot" data-index="23"></div>
+          <div class="nav-dot" data-index="24"></div>
+          <div class="nav-dot" data-index="25"></div>
+        </div>
+        <button id="next-btn" class="arrow-btn">→</button>
+      </div>
+      <button id="continue-btn" class="btn-cute mt-8">Lihat Ucapan Spesial 💕</button>
     </div>
-   </div><!-- Section 2: Photo Gallery -->
-   <div id="section-photos" class="section">
-    <div class="text-center mb-6 slide-in">
-     <h2 class="script-font text-4xl text-pink-500 mb-2" id="gallery-title">Momen ✨</h2>
-     <p class="text-gray-500">Geser untuk lihat kenangan, moga nanti bisa ketemu yaa🥲</p>
+
+    <!-- Section 3: Final Message -->
+    <div id="section-message" class="section">
+      <div class="final-message">
+        <div class="cake-icon text-6xl mb-6 glow-pulse">🎂</div>
+        <div class="wish-card">
+          <h1 id="main-title" class="script-font text-4xl text-pink-500 mb-3 text-bounce">Selamat Ulang Tahun!</h1>
+          <h2 id="name-display" class="script-font text-3xl text-pink-400 mb-4">Salma Salsabil NF 💖</h2>
+          <div id="sweet-message" class="text-gray-600 text-base leading-relaxed mb-4">
+            Semoga di usia yang baru ini, semua mimpi dan harapan kamu terwujud. Tetap jadi pribadi yang luar biasa, baik hati, dan selalu bersinar KELAS KINGG✨
+          </div>
+          <div id="birthday-message-section" class="birthday-section">
+            <div class="birthday-title">💕 Dari Aku Buat Ayang Aku Yang Baik Hati dan Tidak Sombong 💕</div>
+            <div id="birthday-message-text" class="birthday-text">
+              Hari ini bukan cuma hari lahirmu, tapi hari dimana dunia dapet alasan buat jadi lebih hangat. Hari ini adalah hari istimewa kamu dan hari istimewa buat aku juga. Terima kasih udah bertahan sejauh ini, udah kuat, udah sabar, dan tetep jadi kamu yang aku kenal. Semoga semua capek kamu pelan-pelan kebayar yaa, semua doa kamu satu-satu dikabulin. Aku bangga sama kamu sayanggg setiap momen bareng kamu adalah berkah yang gak bisa aku ganti dengan apapun. Makasii yaa udah jadi orang yang ngubah hidup aku jadi lebih berwarna, lebih bermakna, dan lebih bahagia. Kamu bukan cuma sayang aku, kamu juga inspirasi aku setiap hari. Aku tau aku bukan orang yang sempurna, aku sering cemburu kadang malah jadi debat mulu sama kamu, maafkan yaa hehe, bukan karena aku gak percaya tapi justru karena aku terlalu takut kehilangan kamu sayangg, maafin aku ya kalau rasa cemburu itu pernah bikin kamu capek Aku janji akan selalu ada buat kamu dan sayang kamu dengan sepenuh hati bjirr alayy wkwk,  Selamat ulang tahun untuk wanita paling cantik dan spesial dalam hidup aku, maaf yaa kalau sekarang aku belum bisa ngasih hadiah secara langsung. Aku cuma bisa ngasih ini, sederhana sii, tapi aku buat khusus buat kamu. Mungkin gak seberapa, tapi semuanya aku bikin pake rasa sayang dan niat yang tulus Aigooo.Aku harap kamu seneng, semoga kedepannya aku bisa ngasi hadiah yang lebih baik buat kamu yaa, Aku berharap suatu hari nanti kita bisa ketemu,lebih dekat, lebih sering ketawa bareng,
+              dan ngebuktiin kalau semua doa yang kita simpan pelan-pelan jadi nyata 🤍 Semoga tahun ini penuh dengan kebahagiaan, kesehatan, dan cinta yang lebih dalam lagi untuk kita berdua. I love you so much sayanggg. 🌹✨
+            </div>
+          </div>
+          <div class="text-3xl mt-3">🎁🎈🎉</div>
+          <p class="text-pink-400 font-medium text-sm">Dengan penuh cinta dan doa terbaik 💕</p>
+        </div>
+        <button id="celebrate-btn" class="btn-cute mt-8">🎉 Rayakan! 🎉</button>
+        <button id="back-to-menu-msg" class="mt-4 text-pink-400 underline cursor-pointer bg-transparent border-none text-base">Kembali ke menu</button>
+      </div>
     </div>
-    <div class="photo-frame">
-     <div class="photo-inner">
-      <div id="photo-slider" class="photo-slider">
-       <div class="photo-slide bg-gradient-to-br from-pink-100 to-purple-100 ">
-        <img src="1.jpeg" alt="">
-       </div>
-       <div class="photo-slide bg-gradient-to-br from-blue-100 to-pink-100">
-        <img src="5.png" alt="">
-       </div>
-       <div class="photo-slide bg-gradient-to-br from-purple-100 to-pink-100">
-        <img src="3.jpeg" alt="">
-       </div>
-       <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
-        <img src="4.jpeg" alt="">
-       </div>
-       <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
-        <img src="7.png" alt="">
-       </div>
-        <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
-        <img src="8.png" alt="">
-       </div>
-       <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
-        <img src="9.png" alt="">
-       </div>
-       <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
-        <img src="10.png" alt="">
-       </div>
-       <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
-        <img src="11.png" alt="">
-       </div>
-       <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
-        <img src="12.png" alt="">
-       </div>
-       <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
-        <img src="13.png" alt="">
-       </div>
-       <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
-        <img src="14.png" alt="">
-       </div>
-       <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
-        <img src="15.png" alt="">
-       </div>
-       <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
-        <img src="16.png" alt="">
-       </div>
-       <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
-        <img src="18.jpg" alt="">
-       </div>
-       <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
-        <img src="19.jpg" alt="">
-       </div>
-        <div class="photo-slide bg-gradient-to-br from-blue-100 to-orange-100">
-        <img src="17.png" alt="">
-         <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100">
-        <img src="18.png" alt="">
+
+    <!-- Section 4: Music Player -->
+    <div id="section-music" class="section">
+      <div class="music-container">
+        <div class="text-center mb-8 slide-in">
+          <div class="text-6xl mb-4 glow-pulse">🎵</div>
+          <h2 class="script-font text-4xl text-pink-500 mb-2">Playlist Spesial</h2>
+          <p class="text-gray-500">Musik untuk perayaan ulang tahun</p>
+        </div>
+        <div class="spotify-info">
+          <div class="player-section">
+            <div class="text-center mb-4">
+              <div class="text-xl mb-2">🎧</div>
+              <p class="text-gray-700 font-semibold mb-2">Playlist Ulang Tahun Sayang</p>
+              <p class="text-sm text-gray-500">Lagu-lagu romantis pilihan untuk Salma Salsabil</p>
+            </div>
+            <div id="music-player" class="music-player">
+              <div class="player-display">
+                <div class="visualizer">
+                  <div class="bar" style="animation-delay: 0s;"></div>
+                  <div class="bar" style="animation-delay: 0.1s;"></div>
+                  <div class="bar" style="animation-delay: 0.2s;"></div>
+                  <div class="bar" style="animation-delay: 0.3s;"></div>
+                  <div class="bar" style="animation-delay: 0.4s;"></div>
+                </div>
+              </div>
+              <div class="player-controls hidden">
+                <button id="play-btn" class="control-btn play-btn">▶️ Putar</button>
+                <button id="pause-btn" class="control-btn pause-btn hidden">⏸️ Jeda</button>
+                <button id="stop-btn" class="control-btn">⏹️ Berhenti</button>
+              </div>
+              <div class="progress-bar">
+                <div id="progress" class="progress"></div>
+              </div>
+              <div class="text-xs text-gray-500 text-center mt-2">
+                <span id="time-current">0:00</span> / <span id="time-duration">0:00</span>
+              </div>
+              <audio id="audio-player"></audio>
+            </div>
+
+            <!-- Spotify Playlist Embed -->
+            <div class="mt-6 bg-white rounded-2xl shadow-lg p-4">
+              <p class="text-center text-pink-500 font-semibold mb-3">💖 Playlist Spotify buat kamu</p>
+              <iframe
+                style="border-radius:12px"
+                src="https://open.spotify.com/embed/playlist/6KN92GOFiLJv0G0ZJuRh7Q?utm_source=generator"
+                width="100%"
+                height="380"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+              </iframe>
+              <p class="text-xs text-gray-500 text-center mt-2">
+                Aku gatau playlist kamu, soalnya semua suka kata kamu, semoga musik pilihan aku kamu suka juga yaa wkwk
+              </p>
+            </div>
+          </div>
+        </div>
+        <button id="back-to-menu-music" class="btn-cute mt-8">← Kembali ke Menu</button>
+      </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-character">
+          <img id="bear-gif" src="https://media.giphy.com/media/zVoPCF6nmexorzCpW3/giphy.gif" alt="cute bear" loading="lazy" 
+               onerror="console.error('Bear GIF failed to load:', this.src); this.style.background='#ffb6c1'; this.style.borderRadius='50%';">
+        </div>
+        <div class="modal-title" id="modal-title">Kamu udah siap? 🎉</div>
+        <div class="modal-text" id="modal-text">Kamu udah siap buat buka ini?</div>
+        <div class="modal-buttons" id="modal-buttons">
+          <button class="modal-btn yes" id="modal-yes">Yes! 💕</button>
+          <button class="modal-btn no" id="modal-no">No... 😭</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let currentSection = 0;
+      let currentPhoto = 0;
+      const totalPhotos = 26;
+      const correctPin = '2025';
+
+      // Create floating heart
+      function createHeart(x, y) {
+        const heart = document.createElement('div');
+        heart.className = 'floating-heart';
+        heart.innerHTML = ['💕', '💖', '💗', '💝', '❤️', '💓'][Math.floor(Math.random() * 6)];
+        heart.style.left = x + 'px';
+        heart.style.top = y + 'px';
+        heart.style.fontSize = (20 + Math.random() * 20) + 'px';
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 4000);
+      }
+
+      // Create confetti
+      function createConfetti() {
+        const colors = ['#ff6b95', '#ffb6c1', '#ffd700', '#87ceeb', '#98fb98', '#dda0dd', '#f0e68c'];
+        const shapes = ['●', '■', '▲', '★', '♦'];
         
-       </div>
-       </div>
-      </div>
-     </div>
-     <div class="absolute -bottom-3 -right-3 text-2xl">
-      📸
-     </div>
-    </div>
-    <div class="flex items-center gap-4 mt-6"><button id="prev-btn" class="arrow-btn" disabled>←</button>
-     <div id="nav-dots" class="nav-dots">
-      <div class="nav-dot active" data-index="0"></div>
-      <div class="nav-dot" data-index="1"></div>
-      <div class="nav-dot" data-index="2"></div>
-      <div class="nav-dot" data-index="3"></div>
-      <div class="nav-dot" data-index="4"></div>
-      <div class="nav-dot" data-index="5"></div>
-      <div class="nav-dot" data-index="6"></div>
-      <div class="nav-dot" data-index="7"></div>
-      <div class="nav-dot" data-index="8"></div>
-      <div class="nav-dot" data-index="9"></div>
-      <div class="nav-dot" data-index="10"></div>
-      <div class="nav-dot" data-index="11"></div>
-      <div class="nav-dot" data-index="12"></div>
-      <div class="nav-dot" data-index="13"></div>
-      <div class="nav-dot" data-index="14"></div>
-      <div class="nav-dot" data-index="15"></div>
-      <div class="nav-dot" data-index="16"></div>
-      <div class="nav-dot" data-index="17"></div>
-      <div class="nav-dot" data-index="18"></div>
-      <div class="nav-dot" data-index="19"></div>
-      <div class="nav-dot" data-index="20"></div>
-     </div><button id="next-btn" class="arrow-btn">→</button>
-    </div><button id="continue-btn" class="btn-cute mt-8"> Lihat Ucapan Spesial 💕 </button>
-   </div><!-- Section 3: Final Message -->
-   <div id="section-message" class="section">
-    <div class="final-message">
-     <div class="cake-icon text-6xl mb-6 glow-pulse">
-      🎂
-     </div>
-     <div class="wish-card">
-      <h1 id="main-title" class="script-font text-5xl text-pink-500 mb-4 text-bounce">Selamat Ulang Tahun!</h1>
-      <h2 id="name-display" class="script-font text-3xl text-pink-400 mb-6">Salma Salsabil 💖</h2>
-      <div id="sweet-message" class="text-gray-600 text-lg leading-relaxed mb-6">
-       Semoga di usia yang baru ini, semua mimpi dan harapanmu terwujud. Tetap jadi pribadi yang luar biasa, baik hati, dan selalu bersinar ✨
-      </div>
-      <div id="birthday-message-section" class="birthday-section">
-       <div class="birthday-title">
-        💕 Dari Aku Buat Ayang Acu Yang Baik Hati dan Tidak Sombong 💕
-       </div>
-       <div id="birthday-message-text" class="birthday-text">
-        Sayang, hari ini adalah hari istimewamu dan hari istimewa buat aku juga. Setiap momen bareng kamu adalah berkah yang nggak bisa aku ganti dengan apapun. Makasih udah jadi orang yang mengubah hidup aku jadi lebih berwarna, lebih bermakna, dan lebih bahagia. Kamu bukan cuma sayang aku, kamu juga inspirasi aku setiap hari. Aku janji akan selalu ada buat kamu, melindungi kamu, dan mencintai kamu dengan sepenuh hati. Selamat ulang tahun untuk wanita paling cantik dan spesial dalam hidup aku. Semoga tahun ini penuh dengan kebahagiaan, kesehatan, dan cinta yang lebih dalam lagi untuk kita berdua. I love you so much sayang, selamanya. 🌹✨
-       </div>
-      </div>
-      <div class="text-4xl mb-4 mt-6">
-       🎁🎈🎉
-      </div>
-      <p class="text-pink-400 font-medium">Dengan sepenuh cinta dan doa terbaik 💕</p>
-     </div><button id="celebrate-btn" class="btn-cute mt-8"> 🎉 Rayakan! 🎉 </button> <button id="back-to-menu-msg" class="mt-4 text-pink-400 underline cursor-pointer bg-transparent border-none text-base"> Kembali ke menu </button>
-    </div>
-   </div><!-- Section 4: Music Player -->
-   <div id="section-music" class="section">
-    <div class="music-container">
-     <div class="text-center mb-8 slide-in">
-      <div class="text-6xl mb-4 glow-pulse">
-       🎵
-      </div>
-      <h2 class="script-font text-4xl text-pink-500 mb-2">Playlist Spesial</h2>
-      <p class="text-gray-500">Musik untuk perayaan ulang tahun</p>
-     </div>
-     <div class="spotify-info">
-      <div class="player-section">
-       <div class="text-center mb-4">
-        <div class="text-4xl mb-2">
-         🎧
-        </div>
-        <p class="text-gray-700 font-semibold mb-2">Playlist Ulang Tahun Sayang</p>
-        <p class="text-sm text-gray-500">Lagu-lagu romantis pilihan untuk Salma Salsabil</p>
-       </div>
-       <div id="music-player" class="music-player">
-        <div class="player-display">
-         <div class="visualizer">
-          <div class="bar" style="animation-delay: 0s;"></div>
-          <div class="bar" style="animation-delay: 0.1s;"></div>
-          <div class="bar" style="animation-delay: 0.2s;"></div>
-          <div class="bar" style="animation-delay: 0.3s;"></div>
-          <div class="bar" style="animation-delay: 0.4s;"></div>
-         </div>
-        </div>
-        <div class="player-controls hidden"><button id="play-btn" class="control-btn play-btn"> ▶️ Putar </button> <button id="pause-btn" class="control-btn pause-btn hidden"> ⏸️ Jeda </button> <button id="stop-btn" class="control-btn"> ⏹️ Berhenti </button>
-        </div>
-        <div class="progress-bar">
-         <div id="progress" class="progress"></div>
-        </div>
-        <div class="text-xs text-gray-500 text-center mt-2"><span id="time-current">0:00</span> / <span id="time-duration">0:00</span>
-        </div>
-        <audio id="audio-player"></audio>
-       </div>
-
-
-      <!-- Spotify Playlist Embed -->
-<div class="mt-6 bg-white rounded-2xl shadow-lg p-4">
-  <p class="text-center text-pink-500 font-semibold mb-3">
-    💖 Playlist Spotify buat kamu
-  </p>
-
-  <iframe
-    style="border-radius:12px"
-    src="https://open.spotify.com/embed/playlist/6KN92GOFiLJv0G0ZJuRh7Q?utm_source=generator"
-    width="100%"
-    height="380"
-    frameborder="0"
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    loading="lazy">
-  </iframe>
-
-  <p class="text-xs text-gray-500 text-center mt-2">
-    Aku gatau playlist kamu, soalnya semua suka kata kamu, semoga musik pilihan aku kamu suka juga yaa wkwk
-  </p>
-</div>
-
-      </div>
-     </div><button id="back-to-menu-music" class="btn-cute mt-8"> ← Kembali ke Menu </button>
-    </div>
-   </div><!-- Confirmation Modal -->
-   <div id="confirmation-modal" class="modal-overlay">
-    <div class="modal-content">
-     <div class="modal-character"><img id="bear-gif" src="https://media.giphy.com/media/zVoPCF6nmexorzCpW3/giphy.gif" alt="cute bear" loading="lazy" onerror="console.error('Bear GIF failed to load:', this.src); this.style.background='#ffb6c1'; this.style.borderRadius='50%';">
-     </div>
-     <div class="modal-title" id="modal-title">
-      Kamu udah siap? 🎉
-     </div>
-     <div class="modal-text" id="modal-text">
-      Kamu udah siap buat buka ini?
-     </div>
-     <div class="modal-buttons" id="modal-buttons"><button class="modal-btn yes" id="modal-yes">Yes! 💕</button> <button class="modal-btn no" id="modal-no">No... 😭</button>
-     </div>
-    </div>
-   </div>
-   <script>
-    // Default configuration
-    const defaultConfig = {
-      recipient_name: 'Salma Salsabil',
-      main_message: 'Selamat Ulang Tahun!',
-      sweet_message: 'Semoga di usia yang baru ini, semua mimpi dan harapanmu terwujud. Tetap jadi pribadi yang luar biasa, baik hati, dan selalu bersinar ✨',
-      birthday_message: 'Sayang, hari ini bukan cuma hari lahirmu, tapi hari dimana dunia dapet alasan buat jadi lebih hangat.Setiap momen bareng kamu adalah berkah yang nggak bisa aku ganti dengan apapun. Makasih udah jadi orang yang mengubah hidup aku jadi lebih berwarna, lebih bermakna, dan lebih bahagia. Meskipun jauh, tiap hari kamu adalah yang terdekat di hati aku eakk eakkk wkwkwkw gelii jirr \n\nTerima kasih udah bertahan sejauh ini, udah kuat, udah sabar (sama aku juga hehe), dan tetep jadi kamu yang aku kenal dan aku cintai. Meski jarak memisahkan, hati kita tetap deket kiw kiw\n\nSemoga semua cape kamu pelan-pelan kebayar yaa, semua doa kamu satu-satu dikabulin. Aku bangga sama kamu, bangga banget. Kamu adalah bukti bahwa cinta itu ril no fek, walaupun masih ldr, semoga bisa cepet ketemu yaa\n\nTahun ini semoga cerita kita semakin indah, semoga jarak ini tinggal kenangan, dan semoga kamu selalu bahagia. Meski aku nggak bisa ada langsung ngerayain bareng, tapi semua perasaan aku ini sampe ke sini.\n\nI love you sayang, selamanya. Dari hati yang paling baik dan tidak sombong buat kamu. 🤍✨',
-      primary_color: '#ff6b95',
-      secondary_color: '#ffb6c1',
-      text_color: '#4a5568',
-      bg_color: '#ffeef8',
-      accent_color: '#ff4d6d'
-    };
-
-    let config = { ...defaultConfig };
-    let currentSection = 0;
-    let currentPhoto = 0;
-    const totalPhotos = 20;
-    const correctPin = '2025';
-
-    // Initialize Element SDK
-    if (window.elementSdk) {
-      window.elementSdk.init({
-        defaultConfig,
-        onConfigChange: async (newConfig) => {
-          config = { ...defaultConfig, ...newConfig };
-          updateUI();
-        },
-        mapToCapabilities: (cfg) => ({
-          recolorables: [
-            {
-              get: () => cfg.primary_color || defaultConfig.primary_color,
-              set: (v) => { cfg.primary_color = v; window.elementSdk.setConfig({ primary_color: v }); }
-            },
-            {
-              get: () => cfg.secondary_color || defaultConfig.secondary_color,
-              set: (v) => { cfg.secondary_color = v; window.elementSdk.setConfig({ secondary_color: v }); }
-            },
-            {
-              get: () => cfg.text_color || defaultConfig.text_color,
-              set: (v) => { cfg.text_color = v; window.elementSdk.setConfig({ text_color: v }); }
-            },
-            {
-              get: () => cfg.bg_color || defaultConfig.bg_color,
-              set: (v) => { cfg.bg_color = v; window.elementSdk.setConfig({ bg_color: v }); }
-            },
-            {
-              get: () => cfg.accent_color || defaultConfig.accent_color,
-              set: (v) => { cfg.accent_color = v; window.elementSdk.setConfig({ accent_color: v }); }
-            }
-          ],
-          borderables: [],
-          fontEditable: undefined,
-          fontSizeable: undefined
-        }),
-        mapToEditPanelValues: (cfg) => new Map([
-          ['recipient_name', cfg.recipient_name || defaultConfig.recipient_name],
-          ['main_message', cfg.main_message || defaultConfig.main_message],
-          ['sweet_message', cfg.sweet_message || defaultConfig.sweet_message],
-          ['birthday_message', cfg.birthday_message || defaultConfig.birthday_message]
-        ])
-      });
-    }
-
-    // Update UI based on config
-    function updateUI() {
-      const name = config.recipient_name || defaultConfig.recipient_name;
-      const mainMsg = config.main_message || defaultConfig.main_message;
-      const sweetMsg = config.sweet_message || defaultConfig.sweet_message;
-      const birthdayMsg = config.birthday_message || defaultConfig.birthday_message;
-      const primaryColor = config.primary_color || defaultConfig.primary_color;
-      const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
-      const textColor = config.text_color || defaultConfig.text_color;
-      const bgColor = config.bg_color || defaultConfig.bg_color;
-      const accentColor = config.accent_color || defaultConfig.accent_color;
-
-      // Update text content
-      document.getElementById('envelope-recipient').textContent = `Untuk ${name}`;
-      document.getElementById('main-title').textContent = mainMsg;
-      document.getElementById('name-display').innerHTML = `${name} 💝`;
-      document.getElementById('sweet-message').textContent = sweetMsg;
-      document.getElementById('birthday-message-text').textContent = birthdayMsg;
-
-      // Update colors
-      document.documentElement.style.setProperty('--primary', primaryColor);
-      document.documentElement.style.setProperty('--secondary', secondaryColor);
-      
-      // Update button colors
-      document.querySelectorAll('.btn-cute').forEach(btn => {
-        btn.style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
-        btn.style.boxShadow = `0 8px 25px ${primaryColor}66`;
-      });
-
-      // Update envelope colors
-      const envelopeBody = document.querySelector('.envelope-body');
-      const envelopeFlap = document.querySelector('.envelope-flap');
-      if (envelopeBody) {
-        envelopeBody.style.background = `linear-gradient(145deg, ${secondaryColor} 0%, ${primaryColor}40 100%)`;
-      }
-      if (envelopeFlap) {
-        envelopeFlap.style.background = `linear-gradient(145deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
-      }
-
-      // Update heart seal color
-      const heartPath = document.querySelector('.heart-seal path');
-      if (heartPath) {
-        heartPath.setAttribute('fill', accentColor);
-      }
-
-      // Update text colors
-      document.getElementById('sweet-message').style.color = textColor;
-      
-      // Update script font elements
-      document.querySelectorAll('.script-font').forEach(el => {
-        if (el.id !== 'envelope-recipient') {
-          el.style.color = primaryColor;
+        for (let i = 0; i < 50; i++) {
+          setTimeout(() => {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.textContent = shapes[Math.floor(Math.random() * shapes.length)];
+            confetti.style.left = Math.random() * window.innerWidth + 'px';
+            confetti.style.top = '-20px';
+            confetti.style.color = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.fontSize = (10 + Math.random() * 15) + 'px';
+            confetti.style.animationDuration = (2 + Math.random() * 2) + 's';
+            document.body.appendChild(confetti);
+            setTimeout(() => confetti.remove(), 4000);
+          }, i * 50);
         }
-      });
-
-      // Update nav dots
-      document.querySelectorAll('.nav-dot').forEach(dot => {
-        if (dot.classList.contains('active')) {
-          dot.style.background = primaryColor;
-        } else {
-          dot.style.background = `${secondaryColor}66`;
-        }
-      });
-
-      // Update arrow buttons
-      document.querySelectorAll('.arrow-btn').forEach(btn => {
-        btn.style.borderColor = secondaryColor;
-        btn.style.color = primaryColor;
-      });
-
-      // Update submit button
-      const submitBtn = document.getElementById('submit-pin-btn');
-      if (submitBtn) {
-        submitBtn.style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
       }
 
-      // Update birthday section
-      const birthdaySection = document.querySelector('.birthday-section');
-      if (birthdaySection) {
-        birthdaySection.style.borderLeftColor = primaryColor;
-      }
-
-      const birthdayTitle = document.querySelector('.birthday-title');
-      if (birthdayTitle) {
-        birthdayTitle.style.color = primaryColor;
-      }
-    }
-
-    // Create floating heart
-    function createHeart(x, y) {
-      const heart = document.createElement('div');
-      heart.className = 'floating-heart';
-      heart.innerHTML = ['💕', '💖', '💗', '💝', '❤️', '💓'][Math.floor(Math.random() * 6)];
-      heart.style.left = x + 'px';
-      heart.style.top = y + 'px';
-      heart.style.fontSize = (20 + Math.random() * 20) + 'px';
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 4000);
-    }
-
-    // Create confetti
-    function createConfetti() {
-      const colors = ['#ff6b95', '#ffb6c1', '#ffd700', '#87ceeb', '#98fb98', '#dda0dd', '#f0e68c'];
-      const shapes = ['●', '■', '▲', '★', '♦'];
-      
-      for (let i = 0; i < 50; i++) {
-        setTimeout(() => {
-          const confetti = document.createElement('div');
-          confetti.className = 'confetti';
-          confetti.textContent = shapes[Math.floor(Math.random() * shapes.length)];
-          confetti.style.left = Math.random() * window.innerWidth + 'px';
-          confetti.style.top = '-20px';
-          confetti.style.color = colors[Math.floor(Math.random() * colors.length)];
-          confetti.style.fontSize = (10 + Math.random() * 15) + 'px';
-          confetti.style.animationDuration = (2 + Math.random() * 2) + 's';
-          document.body.appendChild(confetti);
-          setTimeout(() => confetti.remove(), 4000);
-        }, i * 50);
-      }
-    }
-
-    // Create fireworks
-    function createFireworks(x, y) {
-      const colors = ['#ff6b95', '#ffb6c1', '#ffd700', '#87ceeb'];
-      for (let i = 0; i < 8; i++) {
-        const angle = (i / 8) * Math.PI * 2;
-        const velocity = 5 + Math.random() * 5;
-        const firework = document.createElement('div');
-        firework.className = 'firework';
-        firework.textContent = '✨';
-        firework.style.left = x + 'px';
-        firework.style.top = y + 'px';
-        firework.style.color = colors[Math.floor(Math.random() * colors.length)];
-        firework.style.fontSize = '20px';
-        const tx = Math.cos(angle) * velocity * 50;
-        const ty = Math.sin(angle) * velocity * 50;
-        firework.style.animation = `none`;
-        document.body.appendChild(firework);
-        
-        setTimeout(() => {
-          firework.style.transition = 'all 1.5s ease-out';
-          firework.style.transform = `translate(${tx}px, ${ty}px)`;
-          firework.style.opacity = '0';
-        }, 10);
-        
-        setTimeout(() => firework.remove(), 1500);
-      }
-    }
-
-    // Create sparkle effect
-    function createSparkle(x, y) {
-      const sparkle = document.createElement('div');
-      sparkle.className = 'sparkle';
-      sparkle.textContent = '✨';
-      sparkle.style.left = x + 'px';
-      sparkle.style.top = y + 'px';
-      sparkle.style.fontSize = '24px';
-      document.body.appendChild(sparkle);
-      setTimeout(() => sparkle.remove(), 800);
-    }
-
-    // Show section
-    function showSection(index) {
-      document.querySelectorAll('.section').forEach((section, i) => {
-        section.classList.toggle('active', i === index);
-      });
-      currentSection = index;
-    }
-
-    // Update photo slider
-    function updatePhotoSlider() {
-      const slider = document.getElementById('photo-slider');
-      slider.style.transform = `translateX(-${currentPhoto * 280}px)`;
-      
-      // Update dots
-      document.querySelectorAll('.nav-dot').forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentPhoto);
-        const primaryColor = config.primary_color || defaultConfig.primary_color;
-        const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
-        dot.style.background = i === currentPhoto ? primaryColor : `${secondaryColor}66`;
-      });
-      
-      // Update buttons
-      document.getElementById('prev-btn').disabled = currentPhoto === 0;
-      document.getElementById('next-btn').disabled = currentPhoto === totalPhotos - 1;
-    }
-
-    // Heart burst effect
-    function heartBurst(centerX, centerY) {
-      for (let i = 0; i < 12; i++) {
-        setTimeout(() => {
-          const angle = (i / 12) * Math.PI * 2;
-          const distance = 50 + Math.random() * 50;
-          const x = centerX + Math.cos(angle) * distance;
-          const y = centerY + Math.sin(angle) * distance;
-          createHeart(x, y);
-        }, i * 80);
-      }
-    }
-
-    // Passcode verification
-    function initPasscode() {
-      const passcodeDigits = document.querySelectorAll('.passcode-digit');
-      const errorMessage = document.getElementById('error-message');
-      const submitBtn = document.getElementById('submit-pin-btn');
-      const deleteBtn = document.getElementById('delete-btn');
-      let currentPinLength = 0;
-
-      // Number buttons
-      document.querySelectorAll('.num-btn[data-num]').forEach(btn => {
-        btn.addEventListener('click', () => {
-          if (currentPinLength < 4) {
-            const num = btn.dataset.num;
-            passcodeDigits[currentPinLength].value = num;
-            passcodeDigits[currentPinLength].classList.add('filled');
-            currentPinLength++;
-            
-            // Tap animation
-            btn.classList.add('tap-effect');
-            setTimeout(() => btn.classList.remove('tap-effect'), 300);
-          }
-        });
-      });
-
-      // Delete button
-      deleteBtn.addEventListener('click', () => {
-        if (currentPinLength > 0) {
-          currentPinLength--;
-          passcodeDigits[currentPinLength].value = '';
-          passcodeDigits[currentPinLength].classList.remove('filled');
-          
-          deleteBtn.classList.add('tap-effect');
-          setTimeout(() => deleteBtn.classList.remove('tap-effect'), 300);
-        }
-      });
-
-      submitBtn.addEventListener('click', () => {
-        const enteredPin = Array.from(passcodeDigits).map(d => d.value).join('');
-        
-        if (enteredPin === correctPin) {
-          // Show confirmation modal
-          showConfirmationModal();
-        } else {
-          // Wrong PIN
-          errorMessage.textContent = '😭 Parah kamu gatau 😭';
-          errorMessage.classList.add('show');
-          
-          // Reset inputs
-          passcodeDigits.forEach(d => {
-            d.value = '';
-            d.classList.remove('filled');
-          });
-          currentPinLength = 0;
+      // Create fireworks
+      function createFireworks(x, y) {
+        const colors = ['#ff6b95', '#ffb6c1', '#ffd700', '#87ceeb'];
+        for (let i = 0; i < 8; i++) {
+          const angle = (i / 8) * Math.PI * 2;
+          const velocity = 5 + Math.random() * 5;
+          const firework = document.createElement('div');
+          firework.className = 'firework';
+          firework.textContent = '✨';
+          firework.style.left = x + 'px';
+          firework.style.top = y + 'px';
+          firework.style.color = colors[Math.floor(Math.random() * colors.length)];
+          firework.style.fontSize = '20px';
+          const tx = Math.cos(angle) * velocity * 50;
+          const ty = Math.sin(angle) * velocity * 50;
+          firework.style.animation = `none`;
+          document.body.appendChild(firework);
           
           setTimeout(() => {
-            errorMessage.classList.remove('show');
-          }, 3000);
+            firework.style.transition = 'all 1.5s ease-out';
+            firework.style.transform = `translate(${tx}px, ${ty}px)`;
+            firework.style.opacity = '0';
+          }, 10);
+          
+          setTimeout(() => firework.remove(), 1500);
         }
-      });
-    }
+      }
 
-    // Show confirmation modal
-    function showConfirmationModal() {
-      const modal = document.getElementById('confirmation-modal');
-      const modalButtons = document.getElementById('modal-buttons');
-      const bearGif = document.getElementById('bear-gif');
-      const modalTitle = document.getElementById('modal-title');
-      const modalText = document.getElementById('modal-text');
-      const modalContent = modal.querySelector('.modal-content');
+      // Show section
+      function showSection(index) {
+        document.querySelectorAll('.section').forEach((section, i) => {
+          section.classList.toggle('active', i === index);
+        });
+        currentSection = index;
+      }
 
-      // Set happy bear GIF - berubah ke yang excited
-      bearGif.src = 'https://media.giphy.com/media/kzXCgAFT40HdsL9sdI/giphy.gif';
-      
-      // Update text untuk happy state
-      modalTitle.textContent = 'YEAAYYY 🎉🎉🎉';
-      modalText.textContent = 'PIN nya bener! Kamu emang tau aku banget 💕';
+      // Update photo slider - FIXED: Calculate based on actual slide width
+      function updatePhotoSlider() {
+        const slider = document.getElementById('photo-slider');
+        const photoSlides = document.querySelectorAll('.photo-slide');
+        
+        if (photoSlides.length > 0) {
+          const slideWidth = photoSlides[0].offsetWidth;
+          slider.style.transform = `translateX(-${currentPhoto * slideWidth}px)`;
+        }
+        
+        document.querySelectorAll('.nav-dot').forEach((dot, i) => {
+          dot.classList.toggle('active', i === currentPhoto);
+        });
+        
+        document.getElementById('prev-btn').disabled = currentPhoto === 0;
+        document.getElementById('next-btn').disabled = currentPhoto === totalPhotos - 1;
+      }
 
-      // Remove angry state if exists
-      modalContent.classList.remove('angry');
-      modalTitle.classList.remove('angry');
-      modalText.classList.remove('angry');
+      // Heart burst effect
+      function heartBurst(centerX, centerY) {
+        for (let i = 0; i < 12; i++) {
+          setTimeout(() => {
+            const angle = (i / 12) * Math.PI * 2;
+            const distance = 50 + Math.random() * 50;
+            const x = centerX + Math.cos(angle) * distance;
+            const y = centerY + Math.sin(angle) * distance;
+            createHeart(x, y);
+          }, i * 80);
+        }
+      }
 
-      modal.classList.add('active');
+      // Passcode verification
+      function initPasscode() {
+        const passcodeDigits = document.querySelectorAll('.passcode-digit');
+        const errorMessage = document.getElementById('error-message');
+        const submitBtn = document.getElementById('submit-pin-btn');
+        const deleteBtn = document.getElementById('delete-btn');
+        let currentPinLength = 0;
 
-      // Fresh render of buttons
-      modalButtons.innerHTML = '<button class="modal-btn yes" id="modal-yes">Yes! 💕</button><button class="modal-btn no" id="modal-no">No... 😭</button>';
+        document.querySelectorAll('.num-btn[data-num]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            if (currentPinLength < 4) {
+              const num = btn.dataset.num;
+              passcodeDigits[currentPinLength].value = num;
+              passcodeDigits[currentPinLength].classList.add('filled');
+              currentPinLength++;
+            }
+          });
+        });
 
-      const yesBtn = document.getElementById('modal-yes');
-      const noBtn = document.getElementById('modal-no');
+        deleteBtn.addEventListener('click', () => {
+          if (currentPinLength > 0) {
+            currentPinLength--;
+            passcodeDigits[currentPinLength].value = '';
+            passcodeDigits[currentPinLength].classList.remove('filled');
+          }
+        });
 
-      yesBtn.addEventListener('click', () => {
-        setTimeout(() => {
-          modal.classList.remove('active');
-          showSection(1);
-          createConfetti();
-          heartBurst(window.innerWidth / 2, window.innerHeight / 2);
-        }, 400);
-      });
+        submitBtn.addEventListener('click', () => {
+          const enteredPin = Array.from(passcodeDigits).map(d => d.value).join('');
+          
+          if (enteredPin === correctPin) {
+            showConfirmationModal();
+          } else {
+            errorMessage.textContent = '😭 Parah kamu gatau 😭';
+            errorMessage.classList.add('show');
+            
+            passcodeDigits.forEach(d => {
+              d.value = '';
+              d.classList.remove('filled');
+            });
+            currentPinLength = 0;
+            
+            setTimeout(() => {
+              errorMessage.classList.remove('show');
+            }, 3000);
+          }
+        });
+      }
 
-      noBtn.addEventListener('click', () => {
-        const modalContent = modal.querySelector('.modal-content');
+      // Show confirmation modal
+      function showConfirmationModal() {
+        const modal = document.getElementById('confirmation-modal');
+        const modalButtons = document.getElementById('modal-buttons');
+        const bearGif = document.getElementById('bear-gif');
         const modalTitle = document.getElementById('modal-title');
         const modalText = document.getElementById('modal-text');
+        const modalContent = modal.querySelector('.modal-content');
 
-        // Change to angry bear GIF
-        bearGif.src = 'https://media.giphy.com/media/fvqqfQWEHMowPeurKb/giphy.gif';
+        bearGif.src = 'https://media.giphy.com/media/kzXCgAFT40HdsL9sdI/giphy.gif';
+        modalTitle.textContent = 'YEAAYYY 🎉🎉🎉';
+        modalText.textContent = 'PIN nya bener! Selamat kamu dapet Aku hehe💕';
 
-        setTimeout(() => {
-          modalContent.classList.add('angry');
-          modalTitle.textContent = '😡 KOK KAMU GITUU SIII 😡';
-          modalTitle.classList.add('angry');
-          modalText.textContent = 'Wah parah sii aku kecewa nii 💔';
-          modalText.classList.add('angry');
-          modalButtons.innerHTML = '<button class="back-btn" id="back-to-modal">Kembali ke Pilihan</button>';
-          
-          document.getElementById('back-to-modal').addEventListener('click', () => {
-            // Change back to happy bear
-            bearGif.src = 'https://media.giphy.com/media/kzXCgAFT40HdsL9sdI/giphy.gif';
+        modalContent.classList.remove('angry');
+        modalTitle.classList.remove('angry');
+        modalText.classList.remove('angry');
 
-            modalContent.classList.remove('angry');
-            modalTitle.textContent = 'Kamu udah siap? 🎉';
-            modalTitle.classList.remove('angry');
-            modalText.textContent = 'Kamu udah siap buat buka ini?';
-            modalText.classList.remove('angry');
-            
-            // Re-render buttons fresh
-            modalButtons.innerHTML = '<button class="modal-btn yes" id="modal-yes">Yes! 💕</button><button class="modal-btn no" id="modal-no">No... 😭</button>';
-            
-            const newYesBtn = document.getElementById('modal-yes');
-            const newNoBtn = document.getElementById('modal-no');
-            
-            newYesBtn.addEventListener('click', () => {
-              setTimeout(() => {
-                modal.classList.remove('active');
-                showSection(1);
-                createConfetti();
-                heartBurst(window.innerWidth / 2, window.innerHeight / 2);
-              }, 400);
-            });
+        modal.classList.add('active');
 
-            newNoBtn.addEventListener('click', () => {
-              noBtn.click();
-            });
-          });
-        }, 600);
-      });
-    }
+        modalButtons.innerHTML = '<button class="modal-btn yes" id="modal-yes">Yes! 💕</button><button class="modal-btn no" id="modal-no">No... 😭</button>';
 
-    // Initialize event listeners
-    function initEvents() {
-      // Envelope click
-      const envelope = document.getElementById('envelope');
-      envelope.addEventListener('click', function(e) {
-        if (!this.classList.contains('opened')) {
-          this.classList.add('opened');
-          
-          // Create hearts around envelope
-          const rect = this.getBoundingClientRect();
-          heartBurst(rect.left + rect.width / 2, rect.top + rect.height / 2);
-          
-          // Transition to menu after delay
+        const yesBtn = document.getElementById('modal-yes');
+        const noBtn = document.getElementById('modal-no');
+
+        yesBtn.addEventListener('click', () => {
           setTimeout(() => {
-            showSection(2);
+            modal.classList.remove('active');
+            showSection(1);
             createConfetti();
-          }, 1500);
-        }
-      });
-
-      // Menu buttons
-      document.getElementById('menu-photo').addEventListener('click', () => {
-        currentPhoto = 0;
-        updatePhotoSlider();
-        showSection(3);
-        createConfetti();
-      });
-
-      document.getElementById('menu-message').addEventListener('click', () => {
-        showSection(4);
-        createConfetti();
-      });
-
-      document.getElementById('menu-music').addEventListener('click', () => {
-        showSection(5);
-      });
-
-      // Photo navigation
-      document.getElementById('prev-btn').addEventListener('click', (e) => {
-        if (currentPhoto > 0) {
-          currentPhoto--;
-          updatePhotoSlider();
-          createFireworks(e.clientX, e.clientY);
-        }
-      });
-
-      document.getElementById('next-btn').addEventListener('click', (e) => {
-        if (currentPhoto < totalPhotos - 1) {
-          currentPhoto++;
-          updatePhotoSlider();
-          createFireworks(e.clientX, e.clientY);
-        }
-      });
-
-      // Nav dots click
-      document.querySelectorAll('.nav-dot').forEach(dot => {
-        dot.addEventListener('click', function() {
-          currentPhoto = parseInt(this.dataset.index);
-          updatePhotoSlider();
+            heartBurst(window.innerWidth / 2, window.innerHeight / 2);
+          }, 400);
         });
-      });
 
-      // Continue button (from photos to message)
-      document.getElementById('continue-btn').addEventListener('click', (e) => {
-        heartBurst(e.clientX, e.clientY);
-        setTimeout(() => {
-          showSection(4);
-          createConfetti();
-        }, 500);
-      });
+        noBtn.addEventListener('click', () => {
+          bearGif.src = 'https://media.giphy.com/media/fvqqfQWEHMowPeurKb/giphy.gif';
 
-      // Celebrate button
-      document.getElementById('celebrate-btn').addEventListener('click', (e) => {
-        createConfetti();
-        heartBurst(e.clientX, e.clientY);
-        
-        // Extra celebration effects with fireworks
-        for (let i = 0; i < 20; i++) {
           setTimeout(() => {
-            createFireworks(
-              Math.random() * window.innerWidth,
-              Math.random() * (window.innerHeight * 0.7)
-            );
-          }, i * 150);
-        }
-      });
+            modalContent.classList.add('angry');
+            modalTitle.textContent = '😡 KOK KAMU GITUU SIII 😡';
+            modalTitle.classList.add('angry');
+            modalText.textContent = 'Wah parah sii aku kecewa nii 💔';
+            modalText.classList.add('angry');
+            modalButtons.innerHTML = '<button class="back-btn" id="back-to-modal">Kembali ke Pilihan</button>';
+            
+            document.getElementById('back-to-modal').addEventListener('click', () => {
+              bearGif.src = 'https://media.giphy.com/media/kzXCgAFT40HdsL9sdI/giphy.gif';
+              modalContent.classList.remove('angry');
+              modalTitle.textContent = 'Kamu udah siap? 🎉';
+              modalTitle.classList.remove('angry');
+              modalText.textContent = 'Kamu udah siap buat buka ini?';
+              modalText.classList.remove('angry');
+              
+              modalButtons.innerHTML = '<button class="modal-btn yes" id="modal-yes">Yes! 💕</button><button class="modal-btn no" id="modal-no">No... 😭</button>';
+              
+              const newYesBtn = document.getElementById('modal-yes');
+              const newNoBtn = document.getElementById('modal-no');
+              
+              newYesBtn.addEventListener('click', () => {
+                setTimeout(() => {
+                  modal.classList.remove('active');
+                  showSection(1);
+                  createConfetti();
+                  heartBurst(window.innerWidth / 2, window.innerHeight / 2);
+                }, 400);
+              });
 
-      // Back to menu buttons
-      document.getElementById('back-to-menu-msg').addEventListener('click', () => {
-        showSection(2);
-      });
-
-      document.getElementById('back-to-menu-music').addEventListener('click', () => {
-        showSection(2);
-      });
-
-      // Touch swipe for photos
-      let touchStartX = 0;
-      const photoFrame = document.querySelector('.photo-frame');
-      
-      if (photoFrame) {
-        photoFrame.addEventListener('touchstart', (e) => {
-          touchStartX = e.touches[0].clientX;
-        });
-
-        photoFrame.addEventListener('touchend', (e) => {
-          const touchEndX = e.changedTouches[0].clientX;
-          const diff = touchStartX - touchEndX;
-          
-          if (Math.abs(diff) > 50) {
-            if (diff > 0 && currentPhoto < totalPhotos - 1) {
-              currentPhoto++;
-            } else if (diff < 0 && currentPhoto > 0) {
-              currentPhoto--;
-            }
-            updatePhotoSlider();
-          }
+              newNoBtn.addEventListener('click', () => {
+                noBtn.click();
+              });
+            });
+          }, 600);
         });
       }
 
-      // Add random hearts periodically
-      setInterval(() => {
-        if (document.querySelector('.section.active')?.id === 'section-message') {
-          createHeart(
-            Math.random() * window.innerWidth,
-            window.innerHeight
-          );
+      // Initialize event listeners
+      function initEvents() {
+        const envelope = document.getElementById('envelope');
+        envelope.addEventListener('click', function(e) {
+          if (!this.classList.contains('opened')) {
+            this.classList.add('opened');
+            const rect = this.getBoundingClientRect();
+            heartBurst(rect.left + rect.width / 2, rect.top + rect.height / 2);
+            setTimeout(() => {
+              showSection(2);
+              createConfetti();
+            }, 1500);
+          }
+        });
+
+        document.getElementById('menu-photo').addEventListener('click', () => {
+          currentPhoto = 0;
+          updatePhotoSlider();
+          showSection(3);
+          createConfetti();
+        });
+
+        document.getElementById('menu-message').addEventListener('click', () => {
+          showSection(4);
+          createConfetti();
+        });
+
+        document.getElementById('menu-music').addEventListener('click', () => {
+          showSection(5);
+        });
+
+        document.getElementById('prev-btn').addEventListener('click', (e) => {
+          if (currentPhoto > 0) {
+            currentPhoto--;
+            updatePhotoSlider();
+            createFireworks(e.clientX, e.clientY);
+          }
+        });
+
+        document.getElementById('next-btn').addEventListener('click', (e) => {
+          if (currentPhoto < totalPhotos - 1) {
+            currentPhoto++;
+            updatePhotoSlider();
+            createFireworks(e.clientX, e.clientY);
+          }
+        });
+
+        document.querySelectorAll('.nav-dot').forEach(dot => {
+          dot.addEventListener('click', function() {
+            currentPhoto = parseInt(this.dataset.index);
+            updatePhotoSlider();
+          });
+        });
+
+        document.getElementById('continue-btn').addEventListener('click', (e) => {
+          heartBurst(e.clientX, e.clientY);
+          setTimeout(() => {
+            showSection(4);
+            createConfetti();
+          }, 500);
+        });
+
+        document.getElementById('celebrate-btn').addEventListener('click', (e) => {
+          createConfetti();
+          heartBurst(e.clientX, e.clientY);
+          
+          for (let i = 0; i < 20; i++) {
+            setTimeout(() => {
+              createFireworks(
+                Math.random() * window.innerWidth,
+                Math.random() * (window.innerHeight * 0.7)
+              );
+            }, i * 150);
+          }
+        });
+
+        document.getElementById('back-to-menu-msg').addEventListener('click', () => {
+          showSection(2);
+        });
+
+        document.getElementById('back-to-menu-music').addEventListener('click', () => {
+          showSection(2);
+        });
+
+        let touchStartX = 0;
+        const photoFrame = document.querySelector('.photo-frame');
+        
+        if (photoFrame) {
+          photoFrame.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+          });
+
+          photoFrame.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > 50) {
+              if (diff > 0 && currentPhoto < totalPhotos - 1) {
+                currentPhoto++;
+              } else if (diff < 0 && currentPhoto > 0) {
+                currentPhoto--;
+              }
+              updatePhotoSlider();
+            }
+          });
         }
-      }, 2000);
-    }
 
-    // Initialize
-    updateUI();
-    initPasscode();
-    initEvents();
-  </script>
+        setInterval(() => {
+          if (document.querySelector('.section.active')?.id === 'section-message') {
+            createHeart(
+              Math.random() * window.innerWidth,
+              window.innerHeight
+            );
+          }
+        }, 2000);
+
+        // Update slider on window resize
+        window.addEventListener('resize', () => {
+          updatePhotoSlider();
+        });
+      }
+
+      // Initialize
+      initPasscode();
+      initEvents();
+      
+      // Initial slider position
+      setTimeout(() => {
+        updatePhotoSlider();
+      }, 100);
+    </script>
   </div>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c89f66ae1ba40d4',t:'MTc3MDIwNTk1NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
- <!-- updated today -->
-
+</body>
 </html>
