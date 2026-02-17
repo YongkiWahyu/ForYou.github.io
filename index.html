@@ -487,12 +487,71 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
     }
 
     .photo-slide img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    .photo-slide video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0;
+    }
+
+    /* Video play button overlay */
+    .video-play-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: background 0.3s ease;
+      z-index: 5;
+    }
+
+    .video-play-overlay:hover {
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .video-play-overlay.hidden {
+      display: none;
+    }
+
+    .play-icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 107, 149, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(255, 107, 149, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .video-play-overlay:hover .play-icon {
+      transform: scale(1.1);
+    }
+
+    .play-icon::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 12px 0 12px 22px;
+      border-color: transparent transparent transparent white;
+      margin-left: 4px;
     }
 
     @media (max-width: 640px) {
@@ -508,6 +567,13 @@
         min-width: 200px;
         width: 200px;
         height: 200px;
+      }
+      .play-icon {
+        width: 50px;
+        height: 50px;
+      }
+      .play-icon::after {
+        border-width: 10px 0 10px 18px;
       }
     }
     
@@ -528,6 +594,16 @@
       background: rgba(255, 182, 193, 0.4);
       cursor: pointer;
       transition: all 0.3s ease;
+    }
+
+    .nav-dot.is-video {
+      background: rgba(255, 107, 149, 0.4);
+      border: 2px solid rgba(255, 107, 149, 0.6);
+    }
+
+    .nav-dot.is-video.active {
+      background: #ff4d6d;
+      border-color: #ff4d6d;
     }
     
     .nav-dot.active {
@@ -1242,11 +1318,6 @@
 </head>
 <body>
   <!-- 🎵 BACKGROUND MUSIC AUDIO ELEMENT -->
-  <!-- TODO: Replace "YOUR_MUSIC_FILE.mp3" with your actual music file path -->
-  <!-- Options: 
-       1. Local file: "music/background-music.mp3" (place file in same directory or subfolder)
-       2. External URL: "https://example.com/your-music.mp3"
-  -->
   <audio id="background-music" loop>
     <source src="A Thousand Yeears.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
@@ -1351,79 +1422,130 @@
       <div class="photo-frame">
         <div class="photo-inner">
           <div id="photo-slider" class="photo-slider">
-            <div class="photo-slide bg-gradient-to-br from-pink-100 to-purple-100">
-              <img src="3.jpeg" alt="">
+            <!-- Slide 0: Image -->
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-purple-100" data-type="image">
+               <img src="3.jpeg" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-blue-100 to-pink-100">
+            <!-- Slide 1: Image -->
+            <div class="photo-slide bg-gradient-to-br from-blue-100 to-pink-100" data-type="image">
               <img src="4.jpeg" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-purple-100 to-pink-100">
+            <!-- Slide 2: Image -->
+            <div class="photo-slide bg-gradient-to-br from-purple-100 to-pink-100" data-type="image">
               <img src="2.jpeg" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+            <!-- Slide 3: Image -->
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100" data-type="image">
+              <img src="ama7.jpeg" alt="">
+            </div>
+            <!-- Slide 4: Image -->
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100" data-type="image">
+              <img src="us2.jpeg" alt="">
+            </div>
+            <!-- Slide 5: Image -->
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100" data-type="image">
+              <img src="us3.jpeg" alt="">
+            </div>
+            <!-- Slide 6: VIDEO -->
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100" data-type="video">
+              <video src="us.mp4" preload="metadata" playsinline webkit-playsinline></video>
+              <div class="video-play-overlay" data-video-index="6">
+                <div class="play-icon"></div>
+              </div>
+            </div>
+            <!-- Slide 7: VIDEO -->
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100" data-type="video">
+              <video src="we.mp4" preload="metadata" playsinline webkit-playsinline></video>
+              <div class="video-play-overlay" data-video-index="7">
+                <div class="play-icon"></div>
+              </div>
+            </div>
+            <!-- Slide 8: Image -->
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100" data-type="image">
               <img src="us1.jpeg" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+            <!-- Slide 9: Image -->
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100" data-type="image">
               <img src="ama3.jpeg" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+            <!-- Slide 10: Image -->
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100" data-type="image">
               <img src="ama4.jpeg" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+            <!-- Slide 11: Image -->
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100" data-type="image">
               <img src="ama2.jpeg" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+            <!-- Slide 12: Image -->
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100" data-type="image">
               <img src="ama6.jpeg" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+            <!-- Slide 13: Image -->
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100" data-type="image">
               <img src="1.jpeg" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+            <!-- Slide 14: Image -->
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100" data-type="image">
               <img src="18.jpg" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+            <!-- Slide 15: Image -->
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100" data-type="image">
               <img src="6.jpg"alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+            <!-- Slide 16: Image -->
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100" data-type="image">
               <img src="r1.jpeg" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+            <!-- Slide 17: Image -->
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100" data-type="image">
               <img src="r3.jpeg" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+            <!-- Slide 18: Image -->
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100" data-type="image">
               <img src="8.png" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+            <!-- Slide 19: Image -->
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100" data-type="image">
               <img src="9.png" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100">
+            <!-- Slide 20: Image -->
+            <div class="photo-slide bg-gradient-to-br from-pink-100 to-orange-100" data-type="image">
               <img src="10.png" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-blue-100 to-orange-100">
+            <!-- Slide 21: Image -->
+            <div class="photo-slide bg-gradient-to-br from-blue-100 to-orange-100" data-type="image">
               <img src="15.png" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100">
+            <!-- Slide 22: Image -->
+            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100" data-type="image">
               <img src="16.png" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100">
+            <!-- Slide 23: Image -->
+            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100" data-type="image">
               <img src="14.png" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100">
+            <!-- Slide 24: Image -->
+            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100" data-type="image">
               <img src="13.png" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100">
+            <!-- Slide 25: Image -->
+            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100" data-type="image">
               <img src="12.png" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100">
+            <!-- Slide 26: Image -->
+            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100" data-type="image">
               <img src="5.png" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100">
+            <!-- Slide 27: Image -->
+            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100" data-type="image">
               <img src="7.png" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100">
+            <!-- Slide 28: Image -->
+            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100" data-type="image">
               <img src="r2.jpeg" alt="">
             </div>
-            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100">
+            <!-- Slide 29: Image -->
+            <div class="photo-slide bg-gradient-to-br from-blue-100 to-purple-100" data-type="image">
               <img src="r4.jpeg" alt="">
             </div>
           </div>
@@ -1433,32 +1555,7 @@
       <div class="flex items-center gap-4 mt-6">
         <button id="prev-btn" class="arrow-btn" disabled>←</button>
         <div id="nav-dots" class="nav-dots">
-          <div class="nav-dot active" data-index="0"></div>
-          <div class="nav-dot" data-index="1"></div>
-          <div class="nav-dot" data-index="2"></div>
-          <div class="nav-dot" data-index="3"></div>
-          <div class="nav-dot" data-index="4"></div>
-          <div class="nav-dot" data-index="5"></div>
-          <div class="nav-dot" data-index="6"></div>
-          <div class="nav-dot" data-index="7"></div>
-          <div class="nav-dot" data-index="8"></div>
-          <div class="nav-dot" data-index="9"></div>
-          <div class="nav-dot" data-index="10"></div>
-          <div class="nav-dot" data-index="11"></div>
-          <div class="nav-dot" data-index="12"></div>
-          <div class="nav-dot" data-index="13"></div>
-          <div class="nav-dot" data-index="14"></div>
-          <div class="nav-dot" data-index="15"></div>
-          <div class="nav-dot" data-index="16"></div>
-          <div class="nav-dot" data-index="17"></div>
-          <div class="nav-dot" data-index="18"></div>
-          <div class="nav-dot" data-index="19"></div>
-          <div class="nav-dot" data-index="20"></div>
-          <div class="nav-dot" data-index="21"></div>
-          <div class="nav-dot" data-index="22"></div>
-          <div class="nav-dot" data-index="23"></div>
-          <div class="nav-dot" data-index="24"></div>
-          <div class="nav-dot" data-index="25"></div>
+          <!-- Nav dots will be generated by JavaScript -->
         </div>
         <button id="next-btn" class="arrow-btn">→</button>
       </div>
@@ -1471,7 +1568,7 @@
         <div class="cake-icon text-6xl mb-6 glow-pulse">🎂</div>
         <div class="wish-card">
           <h1 id="main-title" class="script-font text-4xl text-pink-500 mb-3 text-bounce">Selamat Ulang Tahun!</h1>
-          <h2 id="name-display" class="script-font text-3xl text-pink-400 mb-4">Salma Salsabil NF 💖</h2>
+          <h2 id="name-display" class="script-font text-3xl text-pink-400 mb-4">Salma Salsabil Nur Fadilah  💖</h2>
           <div id="sweet-message" class="text-gray-600 text-base leading-relaxed mb-4">
             Semoga di usia yang baru ini, semua mimpi dan harapan kamu terwujud. Tetap jadi pribadi yang luar biasa, baik hati, dan selalu bersinar KELAS KINGG✨
           </div>
@@ -1486,7 +1583,7 @@
           <p class="text-pink-400 font-medium text-sm">Dengan penuh cinta dan doa terbaik 💕</p>
         </div>
         <button id="celebrate-btn" class="btn-cute mt-8">🎉 Rayakan! 🎉</button>
-        <button id="back-to-menu-msg" class="mt-4 text-pink-400 underline cursor-pointer bg-transparent border-none text-base">Kembali ke menu</button>
+        <button id="back-to-menu-msg" class="btn-cute mt-8">← Kembali ke Menu</button>
       </div>
     </div>
 
@@ -1570,14 +1667,31 @@
     <script>
       let currentSection = 0;
       let currentPhoto = 0;
-      const totalPhotos = 26;
+      const photoSlides = document.querySelectorAll('.photo-slide');
+      const totalPhotos = photoSlides.length;
       const correctPin = '2025';
+
+      // Generate nav dots dynamically based on actual slide count
+      function generateNavDots() {
+        const navDotsContainer = document.getElementById('nav-dots');
+        navDotsContainer.innerHTML = '';
+        for (let i = 0; i < totalPhotos; i++) {
+          const dot = document.createElement('div');
+          dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
+          dot.dataset.index = i;
+          // Mark video dots
+          if (photoSlides[i] && photoSlides[i].dataset.type === 'video') {
+            dot.classList.add('is-video');
+          }
+          navDotsContainer.appendChild(dot);
+        }
+      }
+      generateNavDots();
 
       // 🎵 Background Music Control
       const bgMusic = document.getElementById('background-music');
       let musicStarted = false;
 
-      // Function to start background music
       function startBackgroundMusic() {
         if (!musicStarted && bgMusic) {
           bgMusic.play().then(() => {
@@ -1585,12 +1699,10 @@
             console.log('Background music started');
           }).catch(err => {
             console.log('Background music autoplay prevented:', err);
-            // Music will start on first user interaction
           });
         }
       }
 
-      // Try to start music on first user interaction
       document.addEventListener('click', startBackgroundMusic, { once: true });
       document.addEventListener('touchstart', startBackgroundMusic, { once: true });
 
@@ -1657,19 +1769,37 @@
 
       // Show section
       function showSection(index) {
+        // Pause all videos when leaving photo section
+        pauseAllVideos();
+        
         document.querySelectorAll('.section').forEach((section, i) => {
           section.classList.toggle('active', i === index);
         });
         currentSection = index;
       }
 
-      // Update photo slider - FIXED: Calculate based on actual slide width
+      // Pause all videos in the slider
+      function pauseAllVideos() {
+        document.querySelectorAll('.photo-slide video').forEach(video => {
+          video.pause();
+          // Show the play overlay again
+          const overlay = video.parentElement.querySelector('.video-play-overlay');
+          if (overlay) {
+            overlay.classList.remove('hidden');
+          }
+        });
+      }
+
+      // Update photo slider
       function updatePhotoSlider() {
         const slider = document.getElementById('photo-slider');
-        const photoSlides = document.querySelectorAll('.photo-slide');
+        const slides = document.querySelectorAll('.photo-slide');
         
-        if (photoSlides.length > 0) {
-          const slideWidth = photoSlides[0].offsetWidth;
+        // Pause all videos when sliding
+        pauseAllVideos();
+        
+        if (slides.length > 0) {
+          const slideWidth = slides[0].offsetWidth;
           slider.style.transform = `translateX(-${currentPhoto * slideWidth}px)`;
         }
         
@@ -1817,6 +1947,53 @@
         });
       }
 
+      // Video play/pause functionality
+      function initVideoControls() {
+        document.querySelectorAll('.video-play-overlay').forEach(overlay => {
+          overlay.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const slide = this.parentElement;
+            const video = slide.querySelector('video');
+            
+            if (video) {
+              // Pause all other videos first
+              document.querySelectorAll('.photo-slide video').forEach(v => {
+                if (v !== video) {
+                  v.pause();
+                  const otherOverlay = v.parentElement.querySelector('.video-play-overlay');
+                  if (otherOverlay) otherOverlay.classList.remove('hidden');
+                }
+              });
+              
+              // Play this video
+              this.classList.add('hidden');
+              video.play().catch(err => {
+                console.log('Video play failed:', err);
+                this.classList.remove('hidden');
+              });
+            }
+          });
+        });
+
+        // When video ends, show play overlay again
+        document.querySelectorAll('.photo-slide video').forEach(video => {
+          video.addEventListener('ended', function() {
+            const overlay = this.parentElement.querySelector('.video-play-overlay');
+            if (overlay) overlay.classList.remove('hidden');
+          });
+
+          // Tap on video to pause
+          video.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (!this.paused) {
+              this.pause();
+              const overlay = this.parentElement.querySelector('.video-play-overlay');
+              if (overlay) overlay.classList.remove('hidden');
+            }
+          });
+        });
+      }
+
       // Initialize event listeners
       function initEvents() {
         const envelope = document.getElementById('envelope');
@@ -1864,11 +2041,13 @@
           }
         });
 
-        document.querySelectorAll('.nav-dot').forEach(dot => {
-          dot.addEventListener('click', function() {
-            currentPhoto = parseInt(this.dataset.index);
+        // Use event delegation for nav dots (since they're dynamically generated)
+        document.getElementById('nav-dots').addEventListener('click', function(e) {
+          const dot = e.target.closest('.nav-dot');
+          if (dot) {
+            currentPhoto = parseInt(dot.dataset.index);
             updatePhotoSlider();
-          });
+          }
         });
 
         document.getElementById('continue-btn').addEventListener('click', (e) => {
@@ -1901,6 +2080,7 @@
           showSection(2);
         });
 
+        // Touch swipe for photo slider
         let touchStartX = 0;
         const photoFrame = document.querySelector('.photo-frame');
         
@@ -1924,6 +2104,7 @@
           });
         }
 
+        // Floating hearts on message section
         setInterval(() => {
           if (document.querySelector('.section.active')?.id === 'section-message') {
             createHeart(
@@ -1939,9 +2120,10 @@
         });
       }
 
-      // Initialize
+      // Initialize everything
       initPasscode();
       initEvents();
+      initVideoControls();
       
       // Initial slider position
       setTimeout(() => {
