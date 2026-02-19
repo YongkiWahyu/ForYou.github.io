@@ -13,7 +13,6 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  position: fixed;
   font-family: 'Poppins', 'Quicksand', sans-serif;
 }
 
@@ -234,7 +233,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   opacity: 0;
   visibility: hidden;
   transform: scale(0.9);
@@ -243,12 +242,20 @@ html, body {
   overflow-y: auto;
   overflow-x: hidden;
   z-index: 5;
+  -webkit-overflow-scrolling: touch;
 }
 
 .section.active {
   opacity: 1;
   visibility: visible;
   transform: scale(1);
+}
+
+/* Center content wrapper for sections that need vertical centering */
+#section-passcode,
+#section-envelope,
+#section-menu {
+  justify-content: center;
 }
 
 /* === PASSCODE SECTION === */
@@ -708,6 +715,11 @@ html, body {
 }
 
 /* === PHOTO GALLERY === */
+#section-photos {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .gallery-title {
   font-size: 40px;
   color: #ff8fab;
@@ -734,11 +746,13 @@ html, body {
 }
 
 .photo-inner {
-  width: 280px;
-  height: 280px;
+  width: 300px;
+  height: 300px;
   border-radius: 16px;
   overflow: hidden;
   position: relative;
+  max-width: calc(100vw - 80px);
+  max-height: calc(100vw - 80px);
 }
 
 .photo-slider {
@@ -749,9 +763,9 @@ html, body {
 }
 
 .photo-slide {
-  min-width: 280px;
-  width: 280px;
-  height: 280px;
+  min-width: 300px;
+  width: 300px;
+  height: 300px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -969,6 +983,8 @@ html, body {
   text-align: center;
   max-width: 800px;
   width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .cake-icon {
@@ -1100,6 +1116,11 @@ html, body {
 }
 
 /* === MUSIC SECTION === */
+#section-music {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .music-container {
   max-width: 520px;
   width: 100%;
@@ -1241,6 +1262,8 @@ html, body {
   visibility: hidden;
   transition: all 0.4s ease;
   padding: 20px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .modal-overlay.active {
@@ -1251,7 +1274,7 @@ html, body {
 .modal-content {
   padding: 40px 30px;
   max-width: 420px;
-  width: 100%;
+  width: 92%;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -1495,12 +1518,26 @@ html, body {
   .name-subtitle {
     font-size: 22px;
   }
+
+  .spotify-card {
+    padding: 16px;
+    margin: 0 8px;
+  }
+
+  .spotify-embed iframe {
+    height: 280px;
+  }
 }
 
 @media (max-width: 480px) {
+  .section {
+    padding: 16px 12px;
+  }
+
   .passcode-container {
     padding: 18px 16px 20px;
     width: 95%;
+    max-width: 360px;
   }
 
   .passcode-digit {
@@ -1524,28 +1561,44 @@ html, body {
     height: 170px;
   }
 
+  .envelope-flap {
+    height: 90px;
+  }
+
   .photo-inner {
-    width: 240px;
-    height: 240px;
+    width: calc(100vw - 80px);
+    max-width: 280px;
+    height: calc(100vw - 80px);
+    max-height: 280px;
   }
 
   .photo-slide {
-    min-width: 240px;
-    width: 240px;
-    height: 240px;
+    min-width: calc(100vw - 80px);
+    width: calc(100vw - 80px);
+    max-width: 280px;
+    height: calc(100vw - 80px);
+    max-height: 280px;
   }
 
   .wish-card {
-    padding: 24px 20px;
-    margin: 0 8px;
+    padding: 24px 16px;
+    margin: 0 4px;
   }
 
   .main-birthday-title {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .name-subtitle {
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  .sweet-msg {
+    font-size: 13px;
+  }
+
+  .birthday-section {
+    padding: 16px 12px;
   }
 
   .birthday-text {
@@ -1553,9 +1606,25 @@ html, body {
     line-height: 1.7;
   }
 
+  .birthday-title {
+    font-size: 13px;
+  }
+
   .btn-luxury {
-    padding: 12px 28px;
-    font-size: 14px;
+    padding: 12px 24px;
+    font-size: 13px;
+  }
+
+  .gallery-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .message-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
 
   .play-icon {
@@ -1565,6 +1634,110 @@ html, body {
 
   .play-triangle {
     border-width: 10px 0 10px 18px;
+  }
+
+  .subtitle-text {
+    font-size: 13px;
+    padding: 0 8px;
+  }
+
+  .slider-controls {
+    gap: 10px;
+  }
+
+  .nav-dots {
+    max-width: 200px;
+  }
+
+  .nav-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .cake-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+
+  .closing-text {
+    font-size: 12px;
+  }
+
+  .gift-emojis {
+    font-size: 28px;
+  }
+
+  .spotify-embed {
+    padding: 12px;
+  }
+
+  .spotify-embed iframe {
+    height: 240px;
+  }
+
+  .music-main-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+  }
+
+  .final-message {
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  .floating-deco {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .passcode-container {
+    width: 98%;
+    padding: 14px 12px 16px;
+  }
+
+  .passcode-digit {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+
+  .passcode-input-group {
+    gap: 8px;
+  }
+
+  .number-pad {
+    max-width: 180px;
+    gap: 5px;
+  }
+
+  .photo-inner {
+    width: calc(100vw - 60px);
+    height: calc(100vw - 60px);
+  }
+
+  .photo-slide {
+    min-width: calc(100vw - 60px);
+    width: calc(100vw - 60px);
+    height: calc(100vw - 60px);
+  }
+
+  .main-birthday-title {
+    font-size: 22px;
+  }
+
+  .name-subtitle {
+    font-size: 16px;
+  }
+
+  .envelope {
+    width: 200px;
+    height: 140px;
+  }
+
+  .envelope-flap {
+    height: 75px;
   }
 }
 

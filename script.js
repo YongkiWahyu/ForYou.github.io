@@ -283,7 +283,11 @@ document.addEventListener('DOMContentLoaded', function () {
   function showSection(index) {
     pauseAllVideos();
     document.querySelectorAll('.section').forEach((section, i) => {
-      section.classList.toggle('active', i === index);
+      const isActive = i === index;
+      section.classList.toggle('active', isActive);
+      if (isActive) {
+        section.scrollTop = 0;
+      }
     });
     currentSection = index;
   }
@@ -291,10 +295,17 @@ document.addEventListener('DOMContentLoaded', function () {
   // === PHOTO SLIDER ===
   function updatePhotoSlider() {
     const slider = document.getElementById('photo-slider');
+    const photoInner = document.querySelector('.photo-inner');
     const slides = document.querySelectorAll('.photo-slide');
     pauseAllVideos();
-    if (slides.length > 0) {
-      const slideWidth = slides[0].offsetWidth;
+    if (slides.length > 0 && photoInner) {
+      const slideWidth = photoInner.offsetWidth;
+      // Update slide dimensions to match container
+      slides.forEach(slide => {
+        slide.style.minWidth = slideWidth + 'px';
+        slide.style.width = slideWidth + 'px';
+        slide.style.height = slideWidth + 'px';
+      });
       slider.style.transform = `translateX(-${currentPhoto * slideWidth}px)`;
     }
     document.querySelectorAll('.nav-dot').forEach((dot, i) => {
