@@ -377,7 +377,7 @@ document.addEventListener('DOMContentLoaded', function () {
     modalText.classList.remove('angry');
     modal.classList.add('active');
 
-    modalButtons.innerHTML = '<button class="modal-btn yes" id="modal-yes">Yes! 💕</button><button class="modal-btn no" id="modal-no">No... 😭</button>';
+    modalButtons.innerHTML = '<button class="modal-btn yes" id="modal-yes">Yaa dong 💕</button><button class="modal-btn no" id="modal-no">Ga dulu deh 😭</button>';
 
     function handleYes() {
       setTimeout(() => {
@@ -392,11 +392,11 @@ document.addEventListener('DOMContentLoaded', function () {
       bearGif.src = 'https://media.giphy.com/media/fvqqfQWEHMowPeurKb/giphy.gif';
       setTimeout(() => {
         modalContent.classList.add('angry');
-        modalTitle.textContent = '😡 KOK KAMU GITUU SIII 😡';
+        modalTitle.textContent = 'KOK KAMU GITU SII 😡';
         modalTitle.classList.add('angry');
-        modalText.textContent = 'Wah parah sii aku kecewa nii 💔';
+        modalText.textContent = 'Wah parah si aku kecoa, Dah lah ckp tw 💔';
         modalText.classList.add('angry');
-        modalButtons.innerHTML = '<button class="back-btn" id="back-to-modal">Kembali ke Pilihan</button>';
+        modalButtons.innerHTML = '<button class="back-btn" id="back-to-modal">Balik lagi ga!!🫵</button>';
 
         document.getElementById('back-to-modal').addEventListener('click', () => {
           bearGif.src = 'https://media.giphy.com/media/kzXCgAFT40HdsL9sdI/giphy.gif';
@@ -405,7 +405,7 @@ document.addEventListener('DOMContentLoaded', function () {
           modalTitle.classList.remove('angry');
           modalText.textContent = 'Kamu udah siap buat buka ini?';
           modalText.classList.remove('angry');
-          modalButtons.innerHTML = '<button class="modal-btn yes" id="modal-yes">Yes! 💕</button><button class="modal-btn no" id="modal-no">No... 😭</button>';
+          modalButtons.innerHTML = '<button class="modal-btn yes" id="modal-yes">Yaa dong 💕</button><button class="modal-btn no" id="modal-no">Ga dulu 😭</button>';
           document.getElementById('modal-yes').addEventListener('click', handleYes);
           document.getElementById('modal-no').addEventListener('click', handleNo);
         });
